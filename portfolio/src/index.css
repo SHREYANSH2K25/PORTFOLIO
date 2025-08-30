@@ -16,8 +16,8 @@
   /* Colors – all use HSL because HSL makes it easier to 
      adjust hue/saturation/lightness dynamically */
   --color-border: hsl(var(--border));
-  --color-backgroud: hsl(var(--background));
-  --color-foregroud: hsl(var(--foreground));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
   --color-card: hsl(var(--card));
@@ -26,7 +26,7 @@
      definitions in every class, we store them as variables. 
      These can then be applied to elements quickly. */
   --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pluse-subtle 4s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-out forwards;
   --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
@@ -44,7 +44,7 @@
      and down to create a "floating in space" feel */
   @keyframes float {
     0%, 100% {
-      tranform: translateY(0);
+      transform: translateY(0);
     }
     50% {
       transform: translateY(-10px);
@@ -68,7 +68,7 @@
   @keyframes fade-in {
     from {
       opacity: 0;
-      tranform: translateY(20px);
+      transform: translateY(20px);
     }
     to {
       opacity: 1;
@@ -79,16 +79,16 @@
   /* Meteor animation: simulates a shooting star. 
      We rotate it and translate across X axis, while 
      fading it out towards the end. */
-  @keyframe meteor {
+  @keyframes meteor {
     0% {
-      tranform: rotate(215deg) translateX(0);
+      transform: rotate(215deg) translateX(0);
       opacity: 1;
     }
     70% {
       opacity: 1; /* still visible midway */
     }
     100% {
-      tranform: rotate(215deg) translateX(-500px);
+      transform: rotate(215deg) translateX(-500px);
       opacity: 0; /* disappears at end */
     }
   }
@@ -100,6 +100,7 @@
    variables/styles that apply to the entire project. 
    Here we define light theme (:root) and dark theme (.dark).
  */
+
 @layer base {
   :root {
     /* Light mode theme colors */
@@ -171,10 +172,16 @@
 
 /* Gradient border: stylish border effect for cards/buttons */
 @utility gradient-border {
-  @apply relative rounded-md; /* rounded + positioning */
+  @apply relative rounded-md;  /*rounded + positioning */
   background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
   background-clip: padding-box; /* ensures gradient stays inside border */
   border: 1px solid transparent; /* placeholder for gradient effect */
+}
+
+@utility cosmic-button {
+  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
+         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+         hover:scale-105 active:scale-95;
 }
 
 /* Star utility: used in animated backgrounds, tiny glowing dots */
