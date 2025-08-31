@@ -4,7 +4,7 @@ import { X, Menu } from "lucide-react" // icons for hamburger menu and close but
 
 // list of links we want to show in the navbar
 const navItems = [
-    { name: "Home", href: "#Home" }, // goes to section with id="Home"
+    { name: "Home", href: "#hero" }, // goes to section with id="Home"
     { name: "About", href: "#About" },
     { name: "Skills", href: "#Skills" },
     { name: "Projects", href: "#Projects" },
@@ -93,14 +93,16 @@ const Navbar = () => {
                 >
                     {/* vertical list of nav links in mobile menu */}
                     <div className="flex flex-col space-y-8 text-xl">
+                        {/* for each item in navItems create a link using anchor tag */}
                         {navItems.map((item, key) => (
                             <a
-                                key={key}
-                                href={item.href}
+                                key={key} // React used a unique key to map
+                                href={item.href} // link of item 
                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                 onClick={() => setIsMenuOpen(false)} // close menu when clicked
                             >
-                                {item.name}
+                                {/* item name */}
+                                {item.name} 
                             </a>
                         ))}
                     </div>
