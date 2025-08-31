@@ -5,10 +5,10 @@ import { X, Menu } from "lucide-react" // icons for hamburger menu and close but
 // list of links we want to show in the navbar
 const navItems = [
     { name: "Home", href: "#hero" }, // goes to section with id="Home"
-    { name: "About", href: "#About" },
-    { name: "Skills", href: "#Skills" },
-    { name: "Projects", href: "#Projects" },
-    { name: "Contact", href: "#Contact" },
+    { name: "About", href: "#about" },
+    { name: "Skills", href: "#skills" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
 ]
 
 
