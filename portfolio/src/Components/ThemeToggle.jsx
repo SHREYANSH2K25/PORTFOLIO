@@ -1,6 +1,6 @@
 import { Moon, Sun } from "lucide-react"; // Importing icons for dark & light mode
 import { useState, useEffect } from "react";
-import {cn} from '@/lib/utilis';
+import {cn} from '@/lib/utilis'; // import tailwindmerge class name
 // ThemeToggle component → used for switching between Dark Mode and Light Mode
 export const ThemeToggle = () => {
     // State to check whether dark mode is ON or OFF
